@@ -1,5 +1,6 @@
 package pages;
 
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -7,6 +8,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
+import net.bytebuddy.asm.Advice.OffsetMapping.ForAllArguments;
 
 public class UMSPage extends HomePage {
 	
@@ -50,12 +53,12 @@ public class UMSPage extends HomePage {
 		
 		//fill school country
 		public void fillCountry(String name) throws Exception {
-			selectByText(By.xpath("\"//*[@id=\\\"city\\\"]\""), name);
+			selectByText(By.xpath("//*[@id=\"country\"]"), name);
 		}
 		
 		//fill school city
 		public void fillCity (String city) throws Exception {
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.id("city"))).sendKeys(city);
+			writeText(By.xpath("//*[@name='city']"), city);
 		}
 		
 		//fill school address
@@ -92,21 +95,20 @@ public class UMSPage extends HomePage {
 		public void fillUsername(int i) throws Exception {
 			selectMulti(By.xpath("//*[@id=\"uncMethod\"]"), i);
 		}
-		//fill all fields in Create School page: name(name), curriculum type(i), country(country), city(city), address(address), zip code (zipcode), timezone(c), phone(phone), mail(email), licnse(l), username choice(u)
-		/*public  void fiilCreateSchool( int i, String country, String city, String address, String zipcode, int c, String phone, String email, int l, int u) throws Exception {
-			// wait.until(ExpectedConditions.visibilityOfAllElements(driver ));
-			//writeText(By.xpath("//input[@id='name']"), name);
-			selectMulti(By.xpath("//*[@id=\"curriculumtype\"]"), i);
-			selectByText(By.xpath("//*[@id=\"country\"]"), country);
-			writeText(By.xpath("//*[@id=\"city\"]"), city);
-			writeText(By.xpath("//*[@id=\"address\"]"), address);
-			writeText(By.xpath("//*[@id=\"zipcode\"]"), zipcode);
-			selectMulti(By.xpath("//*[@id=\"timezone\"]"), c);
-			writeText(By.xpath("//*[@id=\"phone\"]"), phone);
-			writeText(By.xpath("//*[@id=\"email\"]"), email);
-			selectMulti(By.xpath("//*[@id=\"licensetype\"]"), l);
-			selectMulti(By.xpath("//*[@id=\"uncMethod\"]"), u);
-			
+
+		//assign school admin
+		/*public void clickAssignAdmin() {
+		driver.findElement(By.xpath("/html/body/div/div/div[2]/form/div[9]/div/div/button")).click();
+		WebElement formElement = driver.findElement(By.xpath("/html/body/div/div/div[2]/form/div[9]/div/div/button"));
+		
+		List<WebElement> allFormChildElements = formElement.findElements(By.xpath("/html/body/div/div/div[2]/form/div[9]/div/div/button"));
+		for (WebElement item : allFormChildElements) {
+			if (item.getClass().equals("table users-table")) {
+				switch (item.getClass().equals("ng-pristine ng-untouched ng-valid ng-empty")){
+					
+				}
+			}
+		}
 		}*/
 		
 		//find template checkbox
@@ -114,12 +116,16 @@ public class UMSPage extends HomePage {
 			wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(By.id("checkbox-2")))).click();
 		}
 		
-		//fill time limitation
-		public void timeLimitation() throws Exception {
-			driver.findElement(By.xpath("/html/body/div/div/div[2]/form/div[14]/div[3]/div/div/span/button/i")).click();
-			driver.findElement(By.xpath("//*[@id=\"datepicker-115-2577-title\"]/strong")).sendKeys("August 2019");
+		//fill time limitation start
+		public void timeLimitationStart(String start) throws Exception {
+			driver.findElement(By.xpath("//*[@id=\"stratdate-2\"]")).sendKeys(start);
 			
 			
+		}
+		
+		//fill time limitation end
+		public void timelimitationEnd(String end) {
+			driver.findElement(By.xpath("//*[@id=\"enddate-2\"]")).sendKeys(end);;
 		}
 
 		public void waitElement(By driver) {
@@ -127,6 +133,10 @@ public class UMSPage extends HomePage {
 			
 		}
 		
+		//submit create school form
+		public void clickSubmit() {
+			driver.findElement(By.xpath("/html/body/div/div/div[2]/form/button")).click();
+		}
 		
 
 }
