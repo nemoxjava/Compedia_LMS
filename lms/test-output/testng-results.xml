@@ -2,21 +2,62 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2018-08-13T16:59:39Z" name="Default suite" finished-at="2018-08-13T16:59:59Z" duration-ms="19881">
+  <suite started-at="2018-08-16T10:19:00Z" name="Default suite" finished-at="2018-08-16T10:19:13Z" duration-ms="13721">
     <groups>
     </groups>
-    <test started-at="2018-08-13T16:59:39Z" name="Default test" finished-at="2018-08-13T16:59:59Z" duration-ms="19881">
+    <test started-at="2018-08-16T10:19:00Z" name="Default test" finished-at="2018-08-16T10:19:13Z" duration-ms="13721">
       <class name="tests.UMSTests">
-        <test-method is-config="true" signature="setup()[pri:0, instance:tests.UMSTests@8c3b9d]" started-at="2018-08-13T16:59:39Z" name="setup" finished-at="2018-08-13T16:59:44Z" duration-ms="4284" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:tests.UMSTests@8c3b9d]" started-at="2018-08-16T10:19:00Z" name="setup" finished-at="2018-08-16T10:19:04Z" duration-ms="4182" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="createOrganization()[pri:0, instance:tests.UMSTests@8c3b9d]" started-at="2018-08-13T16:59:44Z" name="createOrganization" finished-at="2018-08-13T16:59:59Z" duration-ms="15574" status="FAIL">
-          <exception class="java.lang.IllegalMonitorStateException">
+        <test-method signature="createOrganization()[pri:4, instance:tests.UMSTests@8c3b9d]" started-at="2018-08-16T10:19:04Z" name="createOrganization" finished-at="2018-08-16T10:19:13Z" duration-ms="9509" status="FAIL">
+          <exception class="org.openqa.selenium.InvalidSelectorException">
+            <message>
+              <![CDATA[invalid selector: Unable to locate an element with the xpath expression "//*[@id=\"city\"]" because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '"//*[@id=\"city\"]"' is not a valid XPath expression.
+  (Session info: chrome=68.0.3440.106)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
+System info: host: 'COMPEDIAPAVEL', ip: '10.0.0.166', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: d:\users\pavel\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.106, webStorageEnabled: true}
+Session ID: 4492d7c4e34dc6cfaa7a0a34d00cb712
+*** Element info: {Using=xpath, value="//*[@id=\"city\"]"}]]>
+            </message>
             <full-stacktrace>
-              <![CDATA[java.lang.IllegalMonitorStateException
-at java.base/java.lang.Object.wait(Native Method)
-at pages.UMSPage.timeLimitation(UMSPage.java:62)
+              <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: Unable to locate an element with the xpath expression "//*[@id=\"city\"]" because of the following error:
+SyntaxError: Failed to execute 'evaluate' on 'Document': The string '"//*[@id=\"city\"]"' is not a valid XPath expression.
+  (Session info: chrome=68.0.3440.106)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 10.0.17134 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/invalid_selector_exception.html
+Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
+System info: host: 'COMPEDIAPAVEL', ip: '10.0.0.166', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: d:\users\pavel\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 68.0.3440.106, webStorageEnabled: true}
+Session ID: 4492d7c4e34dc6cfaa7a0a34d00cb712
+*** Element info: {Using=xpath, value="//*[@id=\"city\"]"}
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:317)
+at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:419)
+at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
+at pages.BasePage.selectByText(BasePage.java:58)
+at pages.UMSPage.fillCountry(UMSPage.java:53)
 at tests.UMSTests.createOrganization(UMSTests.java:19)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
@@ -45,7 +86,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.IllegalMonitorStateException -->
+          </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createOrganization -->

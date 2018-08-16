@@ -6,7 +6,7 @@ import pages.CoursesPage;
 
 public class CoursesTests extends BaseTest{
 
-	@Test (priority = 0)
+	@Test (priority = 3)
 	
 	public void goToCoursesPage () throws Exception {
 		CoursesPage coursesPage = new CoursesPage(driver, wait);

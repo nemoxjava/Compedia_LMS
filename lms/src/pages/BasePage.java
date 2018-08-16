@@ -1,5 +1,6 @@
 package pages;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -7,6 +8,7 @@ import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.pagefactory.ElementLocator;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.Sleeper;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -66,13 +68,9 @@ public class BasePage {
 	// Expected message for wrong credentials
 	String expectedMessage = "Invalid login, please try again";
 	
-	//wait function for upload element
-	public void waitElement(WebDriver driver) {
-		try {
-			  Thread.sleep(3000);
-			} catch(InterruptedException ex) {
-			  Thread.currentThread().interrupt();
-			}
-		
+	//explicit wait
+	public void explWait(WebDriver driver) {
+		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
+	
 }

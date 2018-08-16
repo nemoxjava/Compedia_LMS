@@ -12,7 +12,7 @@ import pages.TemplatesPage;
   public class TeplatesTests extends BaseTest {
 	  
 
-	@Test (priority = 0)
+	@Test (priority = 2)
 	  
 	  public void goToTemplates () throws Exception {
 		

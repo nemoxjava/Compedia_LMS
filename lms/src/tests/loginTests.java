@@ -6,7 +6,7 @@ import pages.LoginPage;
 
 public class loginTests extends BaseTest {
 	
-	@Test (priority = 0)
+	@Test (priority = 1)
 	
 	public void LoginToHomePage () throws Exception {
 		
