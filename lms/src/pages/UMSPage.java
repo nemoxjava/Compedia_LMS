@@ -1,5 +1,6 @@
 package pages;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -97,19 +98,17 @@ public class UMSPage extends HomePage {
 		}
 
 		//assign school admin
-		/*public void clickAssignAdmin() {
+		public void clickAssignAdmin() {
 		driver.findElement(By.xpath("/html/body/div/div/div[2]/form/div[9]/div/div/button")).click();
-		WebElement formElement = driver.findElement(By.xpath("/html/body/div/div/div[2]/form/div[9]/div/div/button"));
-		
-		List<WebElement> allFormChildElements = formElement.findElements(By.xpath("/html/body/div/div/div[2]/form/div[9]/div/div/button"));
-		for (WebElement item : allFormChildElements) {
-			if (item.getClass().equals("table users-table")) {
-				switch (item.getClass().equals("ng-pristine ng-untouched ng-valid ng-empty")){
-					
-				}
-			}
+		ArrayList <WebElement> allList = new ArrayList <WebElement>(driver.findElements(By.cssSelector("#ngdialog1 > div.ngdialog-content"))); 		
+		for (WebElement item : allList) {
+			if (item.getCssValue("PavelAdminTest") != null) {
+				item.findElement(By.cssSelector("#ngdialog1 > div.ngdialog-content > table > tbody > tr:nth-child(107) > td:nth-child(1) > input")).click();
+			}}
+		driver.findElement(By.cssSelector("#ngdialog1 > div.ngdialog-content > div")).click();
 		}
-		}*/
+		
+		/*driver.getWindowHandle().compareTo("schooladmins-dialog"*/
 		
 		//find template checkbox
 		public void findCheckbox(String name) {

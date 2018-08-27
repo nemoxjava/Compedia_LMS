@@ -28,6 +28,7 @@ public class UMSTests extends BaseTest{
 		umsPage.findCheckbox("testPavel");
 		umsPage.timeLimitationStart("08/16/2018");
 		umsPage.timelimitationEnd("08/16/2019");
+		umsPage.clickAssignAdmin();
 		umsPage.clickSubmit();
 		
 	}

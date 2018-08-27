@@ -12,7 +12,7 @@ public class HomePage extends BasePage {
 	}
 	
 	//Page Variables
-	String baseURL = "https://ehippy.compedia.net/lms/login/index.php";
+	String baseURL = "https://backend.compedia.net/lms/login/index.php";
 	
 	//Go to HomePage
 	public void goHomePage() {
