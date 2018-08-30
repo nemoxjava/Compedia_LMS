@@ -2,6 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -14,7 +15,6 @@ public class LoginPage extends BasePage{
 	
 	
 	public void LoginToLMS (String username, String password) throws Exception {
-		
 		writeText(By.id("username"), username);
 		writeText(By.id("password"), password);
 		driver.findElement(By.id("loginbtn")).click();

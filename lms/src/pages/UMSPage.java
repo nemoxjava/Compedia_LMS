@@ -102,13 +102,14 @@ public class UMSPage extends HomePage {
 		driver.findElement(By.xpath("/html/body/div/div/div[2]/form/div[9]/div/div/button")).click();
 		ArrayList <WebElement> allList = new ArrayList <WebElement>(driver.findElements(By.cssSelector("#ngdialog1 > div.ngdialog-content"))); 		
 		for (WebElement item : allList) {
-			if (item.getCssValue("PavelAdminTest") != null) {
+			if (item.getText().matches("PavelAdminTest")) {
 				item.findElement(By.cssSelector("#ngdialog1 > div.ngdialog-content > table > tbody > tr:nth-child(107) > td:nth-child(1) > input")).click();
+				System.out.println(item);
 			}}
-		driver.findElement(By.cssSelector("#ngdialog1 > div.ngdialog-content > div")).click();
+		
+		//driver.findElement(By.xpath("//*[@id=\"ngdialog1\"]/div[2]/table/tbody/tr[107]/td[1]/input")).click();
 		}
 		
-		/*driver.getWindowHandle().compareTo("schooladmins-dialog"*/
 		
 		//find template checkbox
 		public void findCheckbox(String name) {
