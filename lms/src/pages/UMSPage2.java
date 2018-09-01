@@ -35,7 +35,7 @@ public class UMSPage2 extends HomePage {
 
 	//go to UMS
 	public void openUMS () {
-		siteAdministration();
+		siteAdministration(); 
 		click(umsLink);
 	}
 
