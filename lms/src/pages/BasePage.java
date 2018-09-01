@@ -7,6 +7,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.ElementLocator;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
@@ -24,10 +25,22 @@ public class BasePage {
 		//super(driver,wait);
 		this.driver = driver;
 		this.wait = wait;
+		PageFactory.initElements(driver, this);
+	}
+	
+
+	//Click Method
+	public void click(WebElement el)  {
+		//hilehlight
+		 el.click();
+	}
+	
+	public void fillText(WebElement el,String text) {
+		el.sendKeys(text);
 	}
 	
 	//Click Method
-	public void click (By elementLocation) throws Exception {
+	public void click(By elementLocation) throws Exception {
 		driver.findElement(elementLocation).click();
 	}
 	
@@ -72,5 +85,16 @@ public class BasePage {
 	public void explWait(WebDriver driver) {
 		driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	}
+	
+	public void sleep(long mill) {
+		try {
+			Thread.sleep(mill);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
 	
 }

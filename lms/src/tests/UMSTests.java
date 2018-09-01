@@ -4,13 +4,14 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 import pages.UMSPage;
+import pages.UMSPage2;
 
 public class UMSTests extends BaseTest{
 	
 	@Test (priority = 4)
 	
 	public void createOrganization() throws Exception {
-		UMSPage umsPage = new UMSPage(driver, wait);
+		UMSPage2 umsPage = new UMSPage2(driver, wait);
 		umsPage.openUMS();
 		umsPage.openCreateSchool();
 		umsPage.schoolName("testPavel");

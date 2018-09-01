@@ -7,14 +7,21 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Sleeper;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import net.bytebuddy.asm.Advice.OffsetMapping.ForAllArguments;
 
-public class UMSPage extends HomePage {
-
-	public UMSPage (WebDriver driver, WebDriverWait wait) {
+public class UMSPage2 extends HomePage {
+	@FindBy(partialLinkText="UMS")
+	private WebElement umsLink;
+	
+	@FindBy(css="[name='city']")
+	private WebElement cityField;
+	
+	public UMSPage2 (WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
 	}
 
@@ -29,7 +36,7 @@ public class UMSPage extends HomePage {
 	//go to UMS
 	public void openUMS () {
 		siteAdministration();
-		driver.findElement(By.partialLinkText("UMS")).click();
+		click(umsLink);
 	}
 
 	//open tab Create School
@@ -59,7 +66,7 @@ public class UMSPage extends HomePage {
 
 	//fill school city
 	public void fillCity (String city) throws Exception {
-		writeText(By.xpath("//*[@name='city']"), city);
+		fillText(cityField, city);
 	}
 
 	//fill school address
@@ -100,12 +107,17 @@ public class UMSPage extends HomePage {
 	//assign school admin
 	public void clickAssignAdmin() {
 		driver.findElement(By.xpath("/html/body/div/div/div[2]/form/div[9]/div/div/button")).click();
-		ArrayList <WebElement> allList = new ArrayList <WebElement>(driver.findElements(By.cssSelector("#ngdialog1 > div.ngdialog-content"))); 		
-		for (WebElement item : allList) {
-			if (item.getText().matches("PavelAdminTest")) {
-				item.findElement(By.cssSelector("#ngdialog1 > div.ngdialog-content > table > tbody > tr:nth-child(107) > td:nth-child(1) > input")).click();
-				System.out.println(item);
-			}}
+		sleep(2000);
+		
+		List<WebElement> list= 	driver.findElements(By.cssSelector(".table.users-table [type=\"checkbox\"]"));
+		click(list.get(list.size()-1));
+//		
+//		ArrayList <WebElement> allList = new ArrayList <WebElement>(driver.findElements(By.cssSelector("#ngdialog1 > div.ngdialog-content"))); 		
+//		for (WebElement item : allList) {
+//			if (item.getText().matches("PavelAdminTest")) {
+//				item.findElement(By.cssSelector("#ngdialog1 > div.ngdialog-content > table > tbody > tr:nth-child(107) > td:nth-child(1) > input")).click();
+//				System.out.println(item);
+//			}}
 
 		//driver.findElement(By.xpath("//*[@id=\"ngdialog1\"]/div[2]/table/tbody/tr[107]/td[1]/input")).click();
 	}
