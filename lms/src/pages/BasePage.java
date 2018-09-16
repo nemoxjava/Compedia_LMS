@@ -39,25 +39,22 @@ public class BasePage {
 		el.sendKeys(text);
 	}
 	
-	//Click Method
-	public void click(By elementLocation) throws Exception {
-		driver.findElement(elementLocation).click();
-	}
+	
 	
 	//Write Text
-	public void writeText (By elementLocation, String text) throws Exception {
-		driver.findElement(elementLocation).sendKeys(text);
+	public void writeText (WebElement el, String text) {
+		el.sendKeys(text);
 	}
 	
 	//Read Text
-	public String readText (By elementLocation) throws Exception {
-		return driver.findElement(elementLocation).getText();
+	public String readText (WebElement el) {
+		return el.getText();
 	}
 	
 	//Select multi-choice from drop-box
-	public void  selectMulti (By by, int i) throws Exception {	
+	public void  selectMulti (WebElement el, int i) throws Exception {	
 		
-		 Select selectIndex = new Select(driver.findElement(by));
+		 Select selectIndex = new Select((el));
 		 
 		 selectIndex.selectByIndex(i);
 		 
@@ -66,9 +63,9 @@ public class BasePage {
 	}
 	
 	//select from list
-	public  void selectByText (By elementLocation, String text) throws Exception {
+	public  void selectByText (WebElement el, String text) {
 		
-		Select selectIndex = new Select(driver.findElement(elementLocation));
+		Select selectIndex = new Select((el));
 		selectIndex.selectByVisibleText(text);
 				
 	}

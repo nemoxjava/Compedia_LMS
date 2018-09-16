@@ -18,9 +18,9 @@ public class CoursesTests extends BaseTest{
 		coursesPage.courseDateEnd(8, 7, 119, "1515");
 		coursesPage.description("test Pavel automation");
 		coursesPage.courseFormatLink();
-		coursesPage.courseFormat(0, "testPavel", 0);
+		coursesPage.courseFormat(0, "testPavel");
 		coursesPage.openAppearance();
-		coursesPage.Appearance(1, 0, 1, 0);
+		coursesPage.Appearance(1, 0, 0);
 		coursesPage.openFilesAndUpload();
 		coursesPage.maximumUploadSize(0);
 		coursesPage.openCompletionTracking();

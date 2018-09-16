@@ -7,12 +7,57 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import net.bytebuddy.asm.Advice.OffsetMapping.ForAllArguments;
 
 public class UMSPage extends HomePage {
+	
+	@FindBy(css = "[#nav-drawer > nav.list-group.m-t-1 > a > div]")
+	private WebElement siteAdmin;
+	 
+	
+	@FindBy(partialLinkText="editSchools")
+	private WebElement linkUMS;
+	
+	@FindBy(css = "[id = #school > ul > li.list-group-item.ng-binding.active]")
+	private WebElement openSchoolTab;
+	
+	@FindBy(css = "[id = #name]")
+	private WebElement schoolName;
+	
+	@FindBy(css = "[id = #curriculumtype]")
+	private WebElement curriculumtype;
+	
+	@FindBy(css = "[id = #country]")
+	private WebElement country;
+	
+	@FindBy(css = "[id = #city]")
+	private WebElement City;
+	
+	@FindBy(css = "[id = #address]")
+	private WebElement Address;
+	
+	@FindBy(css = "[id = #zipcode]")
+	private WebElement Zipcode;
+	
+	@FindBy(css = "[id = #timezone]")
+	private WebElement timezone;
+	
+	@FindBy(css = "[id = #phone]")
+	private WebElement Phone;
+	
+	@FindBy(css = "[id = #email]")
+	private WebElement Email;
+	
+	@FindBy(css = "[id = #licensetype]")
+	private WebElement licensetype;
+	
+	@FindBy(css = "[id = #uncMethod]")
+	private WebElement uncMethod;
 
 	public UMSPage (WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
@@ -23,91 +68,85 @@ public class UMSPage extends HomePage {
 	public void siteAdministration() {
 		goHomePage();
 		doLogin();
-		driver.findElement(By.xpath("//*[@id=\"nav-drawer\"]/nav[2]/a/div")).click();
+		siteAdmin.click();
 	}
 
 	//go to UMS
 	public void openUMS () {
 		siteAdministration();
-		driver.findElement(By.partialLinkText("UMS")).click();
+		sleep(1000);
+		linkUMS.click();
 	}
 
 	//open tab Create School
 	public void openCreateSchool() {
-		//driver.findElement(By.xpath("/html/body/div/div/div[1]/nav/div/div/div/div[6]/h4")).click();
-		//WebDriver By = driver;
-		wait.until(ExpectedConditions.visibilityOfElementLocated(org.openqa.selenium.By.xpath("//*[@id=\"school\"]/ul/li[1]"))).click();
-		/*driver.manage().timeouts().implicitlyWait(15, TimeUnit.SECONDS);
-			driver.findElement(By.xpath("//*[@id=\"school\"]/ul/li[1]")).click();*/
+		openSchoolTab.click();
+		((BasePage) openSchoolTab).sleep(10);
 	}
 
 	//fill School name
 	public void schoolName(String name) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='name']"))).sendKeys(name);
+		wait.until(ExpectedConditions.elementToBeClickable(schoolName)).sendKeys(name);
 		//writeText(By.xpath("//input[@id='name']"), name);
 	}
 
 	//fill school curriculum type
 	public void curriculumType(int i) throws Exception {
-		selectMulti(By.xpath("//*[@id=\"curriculumtype\"]"), i);
+		selectMulti(curriculumtype, i);
 	}
 
 	//fill school country
 	public void fillCountry(String name) throws Exception {
-		selectByText(By.xpath("//*[@id=\"country\"]"), name);
+		selectByText(country, name);
 	}
 
 	//fill school city
 	public void fillCity (String city) throws Exception {
-		writeText(By.xpath("//*[@name='city']"), city);
+		writeText(City, city);
 	}
 
 	//fill school address
 	public void fillAddress(String address) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"address\"]"))).sendKeys(address);
+		wait.until(ExpectedConditions.elementToBeClickable(Address)).sendKeys(address);
 	}
 
 	//fill school zip code
 	public void fiilZipcode(String zipcode) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"zipcode\"]"))).sendKeys(zipcode);
+		wait.until(ExpectedConditions.elementToBeClickable(Zipcode)).sendKeys(zipcode);
 	}
 
 	//fill school time zone
 	public void fillTimezone(int i) throws Exception {
-		selectMulti(By.xpath("//*[@id=\"timezone\"]"), i);
+		selectMulti(timezone, i);
 	}
 
 	//fill school phone number
 	public void fiilPhone(String phone) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"phone\"]"))).sendKeys(phone);
+		wait.until(ExpectedConditions.elementToBeClickable(Phone)).sendKeys(phone);
 	}
 
 	//fill school email
 	public void fillEmail(String email) throws Exception {
-		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"email\"]"))).sendKeys(email);
+		wait.until(ExpectedConditions.elementToBeClickable(Email)).sendKeys(email);
 	}
 
 	//fill school license type
 	public void fillLicense(int i) throws Exception {
-		selectMulti(By.xpath("//*[@id=\"licensetype\"]"), i);
+		selectMulti(licensetype, i);
 	}
 
 	//fill school How to create username?
 	public void fillUsername(int i) throws Exception {
-		selectMulti(By.xpath("//*[@id=\"uncMethod\"]"), i);
+		selectMulti(uncMethod, i);
 	}
 
 	//assign school admin
 	public void clickAssignAdmin() {
 		driver.findElement(By.xpath("/html/body/div/div/div[2]/form/div[9]/div/div/button")).click();
-		ArrayList <WebElement> allList = new ArrayList <WebElement>(driver.findElements(By.cssSelector("#ngdialog1 > div.ngdialog-content"))); 		
-		for (WebElement item : allList) {
-			if (item.getText().matches("PavelAdminTest")) {
-				item.findElement(By.cssSelector("#ngdialog1 > div.ngdialog-content > table > tbody > tr:nth-child(107) > td:nth-child(1) > input")).click();
-				System.out.println(item);
-			}}
-
-		//driver.findElement(By.xpath("//*[@id=\"ngdialog1\"]/div[2]/table/tbody/tr[107]/td[1]/input")).click();
+		sleep(2000);
+		
+		List<WebElement> list= 	driver.findElements(By.cssSelector(".table.users-table [type=\"checkbox\"]"));
+		click(list.get(list.size()-1));
 	}
 
 
