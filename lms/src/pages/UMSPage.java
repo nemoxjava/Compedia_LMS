@@ -1,8 +1,6 @@
 package pages;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,21 +10,20 @@ import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import net.bytebuddy.asm.Advice.OffsetMapping.ForAllArguments;
-
 public class UMSPage extends HomePage {
 	
 	@FindBy(how = How.CSS,using = "a[href=\"https://backend.compedia.net/lms/admin/search.php\"]")
 	private WebElement siteAdmin;
 	 
 	
-	@FindBy(partialLinkText="editSchools")
+	@FindBy(how = How.CSS,using = "a[href=\"https://backend.compedia.net/lms/ums/app/#/editSchools\"]")
 	private WebElement linkUMS;
 	
-	@FindBy(css = "[id = #school > ul > li.list-group-item.ng-binding.active]")
+//	@FindBy(how = How.CSS,using = "[href=\"https://backend.compedia.net/lms/ums/app/#/createSchool\"]")
+	@FindBy(css = "[ui-sref = createSchool]")
 	private WebElement openSchoolTab;
 	
-	@FindBy(css = "[id = #name]")
+	@FindBy(css = "[id = #name]")	
 	private WebElement schoolName;
 	
 	@FindBy(css = "[id = #curriculumtype]")

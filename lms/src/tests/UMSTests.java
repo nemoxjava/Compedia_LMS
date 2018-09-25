@@ -11,6 +11,7 @@ public class UMSTests extends BaseTest{
 	public void createOrganization() throws Exception {
 		UMSPage umsPage = new UMSPage(driver, wait);
 		umsPage.openUMS();
+		umsPage.sleep(1000);
 		umsPage.openCreateSchool();
 		umsPage.schoolName("testPavel");
 		umsPage.curriculumType(1);
