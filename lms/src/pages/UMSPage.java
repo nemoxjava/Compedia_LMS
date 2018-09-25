@@ -16,7 +16,7 @@ import net.bytebuddy.asm.Advice.OffsetMapping.ForAllArguments;
 
 public class UMSPage extends HomePage {
 	
-	@FindBy(css = "[#nav-drawer > nav.list-group.m-t-1 > a > div]")
+	@FindBy(how = How.CSS,using = "a[href=\"https://backend.compedia.net/lms/admin/search.php\"]")
 	private WebElement siteAdmin;
 	 
 	
