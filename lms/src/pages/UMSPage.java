@@ -1,6 +1,8 @@
 package pages;
 
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -19,42 +21,48 @@ public class UMSPage extends HomePage {
 	@FindBy(how = How.CSS,using = "a[href=\"https://backend.compedia.net/lms/ums/app/#/editSchools\"]")
 	private WebElement linkUMS;
 	
-//	@FindBy(how = How.CSS,using = "[href=\"https://backend.compedia.net/lms/ums/app/#/createSchool\"]")
-	@FindBy(css = "[ui-sref = createSchool]")
+
+	@FindBy(css = "[id = createSchoolBtn]")
 	private WebElement openSchoolTab;
 	
-	@FindBy(css = "[id = #name]")	
+	@FindBy(css = "[id = name]")	
 	private WebElement schoolName;
 	
-	@FindBy(css = "[id = #curriculumtype]")
+	@FindBy(css = "[id = curriculumtype]")
 	private WebElement curriculumtype;
 	
-	@FindBy(css = "[id = #country]")
+	@FindBy(css = "[id = country]")
 	private WebElement country;
 	
-	@FindBy(css = "[id = #city]")
+	@FindBy(css = "[id = city]")
 	private WebElement City;
 	
-	@FindBy(css = "[id = #address]")
+	@FindBy(css = "[id = address]")
 	private WebElement Address;
 	
-	@FindBy(css = "[id = #zipcode]")
+	@FindBy(css = "[id = zipcode]")
 	private WebElement Zipcode;
 	
-	@FindBy(css = "[id = #timezone]")
+	@FindBy(css = "[id = timezone]")
 	private WebElement timezone;
 	
-	@FindBy(css = "[id = #phone]")
+	@FindBy(css = "[id = phone]")
 	private WebElement Phone;
 	
-	@FindBy(css = "[id = #email]")
+	@FindBy(css = "[id = email]")
 	private WebElement Email;
 	
-	@FindBy(css = "[id = #licensetype]")
+	@FindBy(css = "[id = licensetype]")
 	private WebElement licensetype;
 	
-	@FindBy(css = "[id = #uncMethod]")
+	@FindBy(css = "[id = uncMethod]")
 	private WebElement uncMethod;
+	
+	@FindBy(css = "[id= createSchoolSubmitBtn]")
+	private WebElement submitbtn;
+	
+	@FindBy(css = "[id = ngDialogCloseBtn]")
+	private WebElement closePopup;
 
 	public UMSPage (WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
@@ -73,12 +81,13 @@ public class UMSPage extends HomePage {
 		siteAdministration();
 		sleep(1000);
 		linkUMS.click();
+		sleep(1000);
 	}
 
 	//open tab Create School
-	public void openCreateSchool() {
+	public void openCreateSchool() throws InterruptedException {
+		sleep(2000);
 		openSchoolTab.click();
-		((BasePage) openSchoolTab).sleep(10);
 	}
 
 	//fill School name
@@ -144,6 +153,12 @@ public class UMSPage extends HomePage {
 		
 		List<WebElement> list= 	driver.findElements(By.cssSelector(".table.users-table [type=\"checkbox\"]"));
 		click(list.get(list.size()-1));
+		
+		sleep(1000);
+		//closePopup.click();
+		
+		wait.until(ExpectedConditions.elementToBeClickable(closePopup)).click();
+		
 	}
 
 
@@ -169,8 +184,8 @@ public class UMSPage extends HomePage {
 
 	//submit create school form
 	public void clickSubmit() {
-		click(driver.findElement(By.xpath("/html/body/div/div/div[2]/form/button")));
+		sleep(2000);
+		submitbtn.click();
+
 	}
-
-
 }
