@@ -1,0 +1,5 @@
+com\framework\utility\RestUtils.class
+com\framework\utility\GeneralUtility.class
+com\framework\utility\ExcelUtils.class
+com\framework\utility\SOAPUtils.class
+com\framework\pages\BasePage.class

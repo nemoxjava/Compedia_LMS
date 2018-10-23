@@ -1,0 +1,10 @@
+com\italam\tests\Tests_API_REST_NewServices.class
+com\italam\pages\NextHomePage.class
+com\italam\tests\TEST_API_TNG.class
+com\italam\tests\Tests_API_REST.class
+com\italam\data\Constant.class
+com\italam\tests\Tests_API_REST_practice.class
+com\italam\data\EnumDBsConnDetails.class
+com\italam\pages\NextLogin.class
+com\italam\utility\Utility.class
+com\italam\data\DataProviders.class

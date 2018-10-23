@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="API Tests"
+           tests="24"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="44.579">
+  <properties />
+  
+  
+            <testcase name="apiTest_UpdateEmail" time="1.620" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_getInitialDatan" time="1.647" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_getOrganizationProfile" time="1.620" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_UpdateOrgAdmin" time="1.871" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_CreateOrganizationGetPassword" time="1.369" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_AllCases" time="2.912" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_getInitialDatan" time="1.594" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_UpdateOrgAdmin" time="1.681" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_getOrgAdmin" time="1.414" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTestUpdateorganizationLicensing" time="3.663" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_CreateOrganizationGetPassword" time="1.289" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_UpdateEmail" time="1.631" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTestUpdateorganizationLicensing" time="1.883" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_getOrganizationProfile" time="1.476" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_AllCases" time="3.332" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_AllCases" time="2.995" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_UpdateOrgAdmin" time="1.888" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_CreateOrganizationGetPassword" time="1.427" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTestUpdateorganizationLicensing" time="1.476" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_getOrgAdmin" time="1.422" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_getInitialDatan" time="1.545" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_getOrgAdmin" time="1.648" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_getOrganizationProfile" time="1.666" classname="com.italam.tests.Tests_API_REST" />
+                <testcase name="apiTest_UpdateEmail" time="1.510" classname="com.italam.tests.Tests_API_REST" />
+      
+</testsuite>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite for Sanity CRM and CRM HOT NET]">
+  <parameter name="environment" value="int"/>
+  <listeners>
+    <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+    <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+  </listeners>
+  <test name="Sanity Next(failed)">
+    <classes>
+      <class name="com.next.tests.SanitySaleNext">
+        <methods>
+          <include name="End_Exectuion"/>
+          <include name="next_Sale_Next_pl"/>
+          <include name="Exit_Clean_After_Test"/>
+          <include name="Test_prepration"/>
+        </methods>
+      </class> <!-- com.next.tests.SanitySaleNext -->
+    </classes>
+  </test> <!-- Sanity Next(failed) -->
+</suite> <!-- Failed suite [Suite for Sanity CRM and CRM HOT NET] -->
