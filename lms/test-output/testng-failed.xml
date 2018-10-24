@@ -3,12 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.UMSTests">
+      <class name="tests.CoursesTests">
         <methods>
-          <include name="createOrganization"/>
+          <include name="goToCoursesPage"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- tests.UMSTests -->
+      </class> <!-- tests.CoursesTests -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

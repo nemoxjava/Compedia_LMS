@@ -1,24 +1,24 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 public class LoginPage extends BasePage{
 	
-	@FindBy(css = "[id = #username]")
+	@FindBy(css = "[id = username]")
 	private WebElement userName;
 	
-	@FindBy(css = "[id = #password]")
+	@FindBy(css = "[id = password]")
 	private WebElement passWord;
 	
-	@FindBy(css = "[id = #loginbtn]")
+	@FindBy(css = "[id = loginbtn]")
 	private WebElement loginBtn;
 	
-	@FindBy(css = "[id = #region-main > div > div.row > div > div > div > div.loginerrors.m-t-1 > div]")
+	@FindBy(how = How.XPATH,using = "//*[@id=\"region-main\"]/div/div[2]/div/div/div/div[2]/div")
 	private WebElement errMsg;
 	
 	public LoginPage (WebDriver driver, WebDriverWait wait) {

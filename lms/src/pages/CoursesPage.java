@@ -4,14 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Factory;
 
 public class CoursesPage extends HomePage {
-	@FindBy(css ="[#id_fullname]")
+	@FindBy(how = How.CSS,using = "#id_fullname")
 	private WebElement fullName;
 	
-	@FindBy(css = "[#id_shortname]")
+	@FindBy(css = "#id_shortname")
 	private WebElement shortNameEl;
 	
 	@FindBy(css = "[#id_category]")
@@ -20,7 +21,7 @@ public class CoursesPage extends HomePage {
 	@FindBy (css = "[#id_visible]")
 	private WebElement catVisible;
 	
-	@FindBy(css = "[#yui_3_17_2_1_1536910169631_985 > div]")
+	@FindBy(how = How.XPATH, using = "//*[@id=\"nav-drawer\"]/nav[2]/a/div")
 	private WebElement siteAdmin;
 	
 	@FindBy(partialLinkText="prod_category")

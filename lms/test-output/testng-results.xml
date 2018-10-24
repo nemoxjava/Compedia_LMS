@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="27613" started-at="2018-10-23T18:13:14Z" finished-at="2018-10-23T18:13:41Z">
+  <suite name="Default suite" duration-ms="20787" started-at="2018-10-24T16:52:13Z" finished-at="2018-10-24T16:52:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="27613" started-at="2018-10-23T18:13:14Z" finished-at="2018-10-23T18:13:41Z">
-      <class name="tests.UMSTests">
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.UMSTests@6767c1fc]" name="setup" is-config="true" duration-ms="4215" started-at="2018-10-23T18:13:14Z" finished-at="2018-10-23T18:13:18Z">
+    <test name="Default test" duration-ms="20787" started-at="2018-10-24T16:52:13Z" finished-at="2018-10-24T16:52:34Z">
+      <class name="tests.CoursesTests">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.CoursesTests@6767c1fc]" name="setup" is-config="true" duration-ms="4269" started-at="2018-10-24T16:52:13Z" finished-at="2018-10-24T16:52:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="FAIL" signature="createOrganization()[pri:4, instance:tests.UMSTests@6767c1fc]" name="createOrganization" duration-ms="23375" started-at="2018-10-23T18:13:18Z" finished-at="2018-10-23T18:13:41Z">
+        <test-method status="FAIL" signature="goToCoursesPage()[pri:3, instance:tests.CoursesTests@6767c1fc]" name="goToCoursesPage" duration-ms="16495" started-at="2018-10-24T16:52:17Z" finished-at="2018-10-24T16:52:34Z">
           <exception class="org.openqa.selenium.InvalidSelectorException">
             <message>
               <![CDATA[invalid selector: An invalid or illegal selector was specified
@@ -22,9 +22,9 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
 System info: host: 'PAVEL-PC', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_191'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\pavel\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:60391}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
-Session ID: 88a2b5eea26bc7261aeb117566174054
-*** Element info: {Using=css selector, value=[.ngDialogCloseBtn]}]]>
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\pavel\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:65211}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 430647721c8cb9c25424dde811bd97ea
+*** Element info: {Using=css selector, value=[#id_category]}]]>
             </message>
             <full-stacktrace>
               <![CDATA[org.openqa.selenium.InvalidSelectorException: invalid selector: An invalid or illegal selector was specified
@@ -35,9 +35,9 @@ For documentation on this error, please visit: http://seleniumhq.org/exceptions/
 Build info: version: '3.12.0', revision: '7c6e0b3', time: '2018-05-08T15:15:03.216Z'
 System info: host: 'PAVEL-PC', ip: '192.168.56.1', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_191'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\pavel\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:60391}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
-Session ID: 88a2b5eea26bc7261aeb117566174054
-*** Element info: {Using=css selector, value=[.ngDialogCloseBtn]}
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.41.578737 (49da6702b16031..., userDataDir: C:\Users\pavel\AppData\Loca...}, cssSelectorsEnabled: true, databaseEnabled: false, goog:chromeOptions: {debuggerAddress: localhost:65211}, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 69.0.3497.100, webStorageEnabled: true}
+Session ID: 430647721c8cb9c25424dde811bd97ea
+*** Element info: {Using=css selector, value=[#id_category]}
 at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at sun.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
 at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
@@ -56,9 +56,11 @@ at org.openqa.selenium.By$ByCssSelector.findElement(By.java:431)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:309)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:69)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at com.sun.proxy.$Proxy8.click(Unknown Source)
-at pages.UMSPage.clickAssignAdmin(UMSPage.java:159)
-at tests.UMSTests.createOrganization(UMSTests.java:31)
+at com.sun.proxy.$Proxy8.getTagName(Unknown Source)
+at org.openqa.selenium.support.ui.Select.<init>(Select.java:44)
+at pages.BasePage.selectMulti(BasePage.java:51)
+at pages.CoursesPage.general(CoursesPage.java:143)
+at tests.CoursesTests.goToCoursesPage(CoursesTests.java:16)
 at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
 at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
@@ -89,8 +91,8 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- org.openqa.selenium.InvalidSelectorException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createOrganization -->
-      </class> <!-- tests.UMSTests -->
+        </test-method> <!-- goToCoursesPage -->
+      </class> <!-- tests.CoursesTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
