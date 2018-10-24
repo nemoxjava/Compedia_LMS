@@ -23,6 +23,8 @@ public class LESTests extends BaseTest {
 		lesPage.openTool();
 		lesPage.addLanguage();
 		lesPage.selectLanguage(117);
+		lesPage.sleep(5000);
+		lesPage.editTitle();
 	}
 
 }

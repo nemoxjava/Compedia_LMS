@@ -26,6 +26,12 @@ public class LESPage extends BasePage {
 		
 		@FindBy(how = How.XPATH, using = "//*[@id=\"ngdialog1\"]/div[2]/div[3]/button[2]")
 		private WebElement addLanguageBtn;
+		
+		@FindBy(how = How.XPATH, using = "//*[@id=\"config-btn\"]/ul/span[3]/p")
+		private WebElement clickEdit;
+		
+		@FindBy(how = How.XPATH, using = "//*[@id=\"config-btn\"]/button/span")
+		private WebElement btnConfigAfter;
 
 	public LESPage(WebDriver driver, WebDriverWait wait) {
 		super(driver, wait);
@@ -48,8 +54,8 @@ public class LESPage extends BasePage {
 		}
 		
 		//wait until element be clicable
-		public void waitElement(By driver) {
-			wait.until(ExpectedConditions.elementToBeClickable(driver));
+		public void waitElement(WebElement webElement) {
+			wait.until(ExpectedConditions.elementToBeClickable(webElement));
 
 		}
 		
@@ -64,6 +70,7 @@ public class LESPage extends BasePage {
 		//open config administrative tool 
 		public void openTool() {
 			sleep(1000);
+			waitElement(btnConfig);
 			btnConfig.click();
 			//wait.until(ExpectedConditions.elementToBeClickable(btnConfig));
 		}
@@ -81,9 +88,18 @@ public class LESPage extends BasePage {
 			
 			addLanguageBtn.click();
 			
+			
 			//List<WebElement> list = driver.findElements(By.partialLinkText(lang));
 			
 			//selectByText(listlanguage, lang);
+		}
+		
+		//add translated text and save
+		public void editTitle() {
+			btnConfigAfter.isEnabled();
+			click(btnConfigAfter);
+			waitElement(clickEdit);
+			click(clickEdit);
 		}
 		
 		
