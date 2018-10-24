@@ -58,10 +58,10 @@ public class UMSPage extends HomePage {
 	@FindBy(css = "[id = uncMethod]")
 	private WebElement uncMethod;
 	
-	@FindBy(css = "[id= createSchoolSubmitBtn]")
+	@FindBy(css = "[id = createSchoolSubmitBtn]")
 	private WebElement submitbtn;
 	
-	@FindBy(css = "[id = ngDialogCloseBtn]")
+	@FindBy(how = How.ID, using = "[id = ngDialogCloseBtn]")
 	private WebElement closePopup;
 
 	public UMSPage (WebDriver driver, WebDriverWait wait) {
@@ -156,8 +156,8 @@ public class UMSPage extends HomePage {
 		
 		sleep(1000);
 		//closePopup.click();
-		
-		wait.until(ExpectedConditions.elementToBeClickable(closePopup)).click();
+		closePopup.click();
+		//wait.until(ExpectedConditions.elementToBeClickable(closePopup)).click();
 		
 	}
 
